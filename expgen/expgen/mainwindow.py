@@ -20,7 +20,15 @@ class MyMainWindow(VCPMainWindow):
         self.pluginsCb.activated[str].connect(self.pluginChanged)
         self.statusCb.activated[str].connect(self.statusChanged)
 
+        ruleTypes = ['Select Type', 'Enable', 'Text', 'Style Sheet',\
+            'Style Class', 'Visible', 'None']
+        for item in ruleTypes:
+            self.ruleTypesCb.addItem(item)
+            print(item)
+        self.ruleTypesCb.activated[str].connect(self.ruleTypeChanged)
 
+
+    # if you read this I need the variable type returned by the plugin channel
     def pluginChanged(self, text): # status needs to be divided up into groups
         print(text)
         self.channelNameCb.clear()
@@ -40,14 +48,6 @@ class MyMainWindow(VCPMainWindow):
     def statusChanged(self, text):
         print(text)
 
-
-    # add any custom methods here
-    items = []
-    for plugin, obj in PLUGINS.iteritems():
-        for chan_name in obj.channels:
-            items.append('{}:{}'.format(plugin, chan_name))
-    print(len(items))
-    #print(items[0].split(':')[0])
-    #self.pluginsCB.clear()
-
+    def ruleTypeChanged(self, text): # ruleTypeLb
+        print(text)
  
