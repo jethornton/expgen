@@ -34,20 +34,29 @@ class MyMainWindow(VCPMainWindow):
         self.channelNameCb.clear()
         self.statusCb.clear()
 
+        """
         if text == 'status':
             statusGroups = ['Select Group', 'joint', 'spindle', 'other']
             for item in statusGroups:
                 self.statusCb.addItem(item)
         else: # type(channel.getValue()).__name__
-            for plugin, obj in PLUGINS.iteritems():
-                if plugin == text:
-                    for channelName in sorted(obj.channels.keys()): # a dict
-                        self.channelNameCb.addItem(channelName)
-                        print(type(obj.getValue()).__name__)
+        """
+        for plugin, obj in PLUGINS.iteritems():
+            if plugin == text:
+                for channelName in sorted(obj.channels.keys()): # a dict
+                    self.channelNameCb.addItem(channelName)
+                    print(type(getattr(obj, channelName).getValue()))
+                    #print(type(obj.)
 
     def statusChanged(self, text):
         print(text)
 
     def ruleTypeChanged(self, text): # ruleTypeLb
+        items = PLUGINS.viewitems()
+        for plugin, obj in items:
+            if plugin == 'status':
+                print(type(obj.on()))
+            #print(plugin)
+            #print(obj)
         print(text)
  
