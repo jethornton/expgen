@@ -6,7 +6,7 @@ qtdesigner:
   qss_file: ( application.kwargs.stylesheet )
 
 vcp:
-  name: expressions
+  name: expgen
   version: v0.0.1
   author: My Name
   description: >
@@ -31,7 +31,7 @@ windows:
   mainwindow:
     # Specify the class to use for the VCP's mainwindow
     #   Format: package.module:class
-    provider: expressions.mainwindow:MyMainWindow
+    provider: expgen.mainwindow:MyMainWindow
 
     # Keyword arguments to pass when initializing the class.
     kwargs:
