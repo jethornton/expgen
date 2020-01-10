@@ -45,7 +45,7 @@ class MyMainWindow(VCPMainWindow):
             if plugin == text:
                 for channelName in sorted(obj.channels.keys()): # a dict
                     self.channelNameCb.addItem(channelName)
-                    print(type(getattr(obj, channelName).getValue()))
+                    print('{} {}'.format(channelName, type(getattr(obj, channelName).getValue())))
                     #print(type(obj.)
 
     def statusChanged(self, text):
