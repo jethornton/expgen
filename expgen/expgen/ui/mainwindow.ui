@@ -95,14 +95,20 @@
      <set>Qt::AlignCenter</set>
     </property>
    </widget>
-   <widget class="StatusLabel" name="statuslabel">
+   <widget class="QLabel" name="pluginTypeLb">
     <property name="geometry">
      <rect>
-      <x>540</x>
-      <y>435</y>
-      <width>49</width>
-      <height>15</height>
+      <x>355</x>
+      <y>369</y>
+      <width>106</width>
+      <height>26</height>
      </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::Box</enum>
+    </property>
+    <property name="text">
+     <string/>
     </property>
    </widget>
   </widget>
@@ -140,13 +146,6 @@
    </property>
   </action>
  </widget>
- <customwidgets>
-  <customwidget>
-   <class>StatusLabel</class>
-   <extends>QLabel</extends>
-   <header>qtpyvcp.widgets.display_widgets.status_label</header>
-  </customwidget>
- </customwidgets>
  <resources/>
  <connections/>
 </ui>
